@@ -12,6 +12,9 @@ Route::view("alumnos","alumnos" )->name("alumnos");
 Route::view("/","main" )->name("main");
 Route::view("about","about" )->name("about");
 
+Route::get("/alumno/{numero}",fn($numero)=>view("alumno" , ["numero"=>$numero]));
+Route::get("/profesor/{id}",fn($id)=>view("profesor" , ["id"=>$id]));
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
