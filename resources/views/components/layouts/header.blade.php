@@ -4,7 +4,7 @@
     </a>
     <h1 class="text-4xl">Gestión de instituto</h1>
     <div>
-        <button class="btn btn-sm btn-primary">Login</button>
-        <button class="btn btn-sm btn-primary">Register</button>
+        <button class="btn btn-lg bg-boton-primary"><a href="{{route("login")}}">Login</a></button>
+        <button class="btn btn-lg bg-boton-primary"><a href="{{route("register")}}">Register</a></button>
     </div>
 </header>

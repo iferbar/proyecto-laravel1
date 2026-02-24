@@ -1,15 +1,19 @@
 <?php
-
+use App\Http\Controllers\MainController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('main');
-});
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
+use App\Http\Controllers\Auth\RegisteredUserController;
 
+
+Route::get('/', [MainController::class, 'index'])->name('main');
+
+
+
+//Route::view("/","main" )->name("main");
 Route::view("noticias","noticias" )->name("noticias");
 Route::view("alumnos","alumnos" )->name("alumnos");
-Route::view("/","main" )->name("main");
 Route::view("about","about" )->name("about");
 
 Route::get("/alumno/{numero}",fn($numero)=>view("alumno" , ["numero"=>$numero]));

@@ -17,11 +17,13 @@
     --height-nav:10vh;
 
     /*    style="backgroud-color:#ffAAGG"*/
-    --color-header:#56D9E5;
-    --color-nav:#A4E0E6;
-    --color-main:#FFFFFF;
-    --color-footer:#000000;
-    --color-titulo:#8C1D07;
+    --color-header:#222831;
+    --color-nav:#393E46;
+    --color-main:#EEEEEE;
+    --color-footer:#222831;
+    --color-boton-primary:#00797f;
+    --color-boton-secondary:#00ADB5;
+
 
 
 
