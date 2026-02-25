@@ -10,7 +10,6 @@ use App\Http\Controllers\Auth\RegisteredUserController;
 Route::get('/', [MainController::class, 'index'])->name('main');
 
 
-
 //Route::view("/","main" )->name("main");
 Route::view("noticias","noticias" )->name("noticias");
 Route::view("alumnos","alumnos" )->name("alumnos");
@@ -30,3 +29,7 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+Route::fallback(function () {
+    $url = request()->path();
+    return ("<h1>Esta página $url no existe");
+});
