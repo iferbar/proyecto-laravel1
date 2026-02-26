@@ -1,24 +1,25 @@
 <x-layouts.layout>
     @guest
     <div
-        class="hero min-h-full"
-        style="background-image: url(https://img.daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.webp);"
+        class="hero min-h-full bg-main"
+        style="background-image: url(https://img.daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.webp);
+        backdrop-filter: blur(100%);"
     >
-        <div class="hero-overlay"></div>
+        <div class="hero-overlay bg-green-900/50 backdrop-blur-sm"></div>
         <div class="hero-content text-neutral-content text-center">
             <div class="max-w-md">
-                <h1 class="mb-5 text-5xl font-bold">Hello there</h1>
+                <h1 class="mb-5 text-5xl font-bold">{{__("Pensando en tu futuro")  }}</h1>
                 <p class="mb-5">
-                    Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
-                    quasi. In deleniti eaque aut repudiandae et a id nisi.
+                    Te ofrecemos ciclos formativos adaptados a las necesidades actuales de las empresas
                 </p>
-                <button class="btn btn-primary">Get Started</button>
+                <button class="btn btn-lg shadow-none bg-boton-primary border-transparent hover:bg-boton-secondary">El Centro</button>
+                <button class="btn btn-lg shadow-none bg-boton-primary border-transparent hover:bg-boton-secondary">Oferta formativa</button>
             </div>
         </div>
     </div>
     @endguest
     @auth
-        <div class="flex flex-row h-main justify-center items-center">
+        <div class="flex flex-row h-main justify-center items-center bg-main">
             <div class="card image-block hover:image-full w-96 shadow-sm">
                 <figure>
                     <img

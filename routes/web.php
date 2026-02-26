@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\RegisteredUserController;
-
+use App\Http\Controllers\LangController;
 
 Route::get('/', [MainController::class, 'index'])->name('main');
 
@@ -31,5 +31,7 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 Route::fallback(function () {
     $url = request()->path();
-    return ("<h1>Esta página $url no existe");
+    return ("<h1>Esta página $url no existe</h1>");
 });
+
+Route::post("language",LangController::class)->name('lang');
