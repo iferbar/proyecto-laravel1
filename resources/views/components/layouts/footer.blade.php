@@ -1,6 +1,6 @@
 <footer class="h-footer footer bg-nav sm:footer-horizontal text-neutral-content items-center p-2 ">
     <aside class="grid grid-cols-2 items-center">
-        <p>Copyright © 2026 - All right reserved</p>
+        <p>Copyright © 2026 - {{__("Todos los derechos reservados")}}</p>
     </aside>
         <nav class="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
             <div class="relative">

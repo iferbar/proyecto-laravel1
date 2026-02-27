@@ -10,10 +10,10 @@
             <div class="max-w-md">
                 <h1 class="mb-5 text-5xl font-bold">{{__("Pensando en tu futuro")  }}</h1>
                 <p class="mb-5">
-                    Te ofrecemos ciclos formativos adaptados a las necesidades actuales de las empresas
+                    {{__("Te ofrecemos ciclos formativos adaptados a las necesidades actuales de las empresas")}}
                 </p>
-                <button class="btn btn-lg shadow-none bg-boton-primary border-transparent hover:bg-boton-secondary">El Centro</button>
-                <button class="btn btn-lg shadow-none bg-boton-primary border-transparent hover:bg-boton-secondary">Oferta formativa</button>
+                <button class="btn btn-lg shadow-none bg-boton-primary border-transparent hover:bg-boton-secondary">{{__("El Centro")}}</button>
+                <button class="btn btn-lg shadow-none bg-boton-primary border-transparent hover:bg-boton-secondary">{{__("Oferta Formativa")}}</button>
             </div>
         </div>
     </div>
