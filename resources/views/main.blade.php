@@ -23,14 +23,14 @@
             <div class="card image-block hover:image-full w-96 shadow-sm">
                 <figure>
                     <img
-                        src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                        src="https://picsum.photos/id/5/500/300"
                         alt="Shoes" />
                 </figure>
                 <div class="card-body">
-                    <h2 class="card-title">TITULO</h2>
-                    <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
+                    <h2 class="card-title">{{__("FICHA DE ALUMNO")}}</h2>
+                    <p>{{__("Ver las novedades, notificaciones, calificaciones y mensajes")}}</p>
                     <div class="card-actions justify-end">
-                        <button class="btn bg-boton-primary border-transparent">COMPRAR</button>
+                        <button class="btn bg-boton-primary border-transparent">{{__("ENTRAR")}}</button>
                     </div>
                 </div>
             </div>

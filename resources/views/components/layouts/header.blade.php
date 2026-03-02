@@ -33,22 +33,21 @@
 </header>
 
 {{--DISEÑO PANTALLA MOVIL--}}
-<header class="h-header lg:hidden flex flex-row bg-header justify-between items-center py-5 px-15">
+<header class=" lg:hidden flex flex-row bg-header justify-between items-center py-5 px-15">
     <a href="{{route("main")}}">
         <img src="{{asset("/images/logo3.png")}}" alt="logo" class="object-cover w-20">
     </a>
         <div class="flex flex-col gap-4">
         @guest
-            <div class="flex flex-col gap-4 items-center">
+            <div class="relative">
                 <input type="checkbox" class="peer sr-only" id="menu_login">
-                <label for="menu_login">
+                <label for="menu_login"  >
                     <img src="{{"/images/hamburger-menu-icon.png"}}" alt="logo1" class="object-cover w-10 bg-boton-primary p-2 rounded-sm">
                 </label>
-
-                <div class="hidden peer-checked:flex">
-                    <button class="btn btn-lg shadow-none bg-boton-primary border-transparent hover:bg-boton-secondary"><a href="{{route("login")}}">{{__("Login")  }}</a></button>
-                    <button class="btn btn-lg shadow-none bg-boton-primary border-transparent hover:bg-boton-secondary"><a href="{{route("register")}}">{{__("Register")  }}</a></button>
-                </div>
+                    <div class="hidden peer-checked:flex">
+                        <button class="btn btn-lg shadow-none bg-boton-primary border-transparent hover:bg-boton-secondary"><a href="{{route("login")}}">{{__("Login")  }}</a></button>
+                        <button class="btn btn-lg shadow-none bg-boton-primary border-transparent hover:bg-boton-secondary"><a href="{{route("register")}}">{{__("Register")  }}</a></button>
+                    </div>
             </div>
         @endguest
 
