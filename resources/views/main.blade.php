@@ -1,7 +1,7 @@
 <x-layouts.layout>
     @guest
     <div
-        class="hero min-h-full bg-main"
+        class="h-main hero min-h-full bg-main"
         style="background-image: url(https://img.daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.webp);
         backdrop-filter: blur(100%);"
     >

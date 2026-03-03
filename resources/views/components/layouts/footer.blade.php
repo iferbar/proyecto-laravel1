@@ -1,4 +1,4 @@
-<footer class="h-footer footer bg-nav sm:footer-horizontal text-neutral-content items-center p-2 ">
+<footer class="lg:h-footer footer bg-nav sm:footer-horizontal text-neutral-content items-center p-2">
     <aside class="grid grid-cols-2 items-center">
         <p>Copyright © 2026 - {{__("Todos los derechos reservados")}}</p>
     </aside>
