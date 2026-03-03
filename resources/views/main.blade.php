@@ -19,7 +19,7 @@
     </div>
     @endguest
     @auth
-        <div class="flex flex-row h-main justify-center items-center bg-main">
+        <div class="flex flex-row h-main justify-around bg-main">
             <div class="card image-block hover:image-full w-96 shadow-sm">
                 <figure>
                     <img
@@ -27,10 +27,10 @@
                         alt="Shoes" />
                 </figure>
                 <div class="card-body">
-                    <h2 class="card-title">{{__("FICHA DE ALUMNO")}}</h2>
-                    <p>{{__("Ver las novedades, notificaciones, calificaciones y mensajes")}}</p>
+                    <h2 class="card-title">{{__("Gestion de proyectos")}}</h2>
+                    <p>{{__("Aqui vamos a realizar un CRUD completo de proyectos")}}</p>
                     <div class="card-actions justify-end">
-                        <button class="btn bg-boton-primary border-transparent">{{__("ENTRAR")}}</button>
+                        <a href="{{route("projects.index")}}"><button class="btn bg-boton-primary border-transparent">{{__("Ver Proyectos")}}</button></a>
                     </div>
                 </div>
             </div>
