@@ -1,6 +1,7 @@
 <?php
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ProjectController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
@@ -35,3 +36,4 @@ Route::fallback(function () {
 });
 
 Route::post("language",LangController::class)->name('lang');
+Route::resource("projects",ProjectController::class);
