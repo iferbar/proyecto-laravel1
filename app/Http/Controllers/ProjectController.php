@@ -14,7 +14,13 @@ class ProjectController extends Controller
     public function index()
     {
         $projects = Project::all();
-        return view('projects.index', compact('projects'));
+        $campos=[
+            "name"=>"Nombre",
+            "description"=>"Descripcion",
+            "hours"=>"Horas",
+            "start_date"=>"Fecha de comienzo",
+        ];
+        return view('projects.index', compact('projects','campos'));
     }
 
     /**

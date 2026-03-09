@@ -1,7 +1,7 @@
 <x-layouts.layout>
     <x-crud
-        resource="projects"
-        :filas="$projects"
+        resource="teachers"
+        :filas="$teachers"
         :campos="$campos"
     />
 </x-layouts.layout>
