@@ -16,10 +16,14 @@ Route::get('/', [MainController::class, 'index'])->name('main');
 //Route::view("/","main" )->name("main");
 Route::view("noticias","noticias" )->name("noticias");
 Route::view("alumnos","alumnos" )->name("alumnos");
-Route::view("about","about" )->name("about");
+Route::view("profesores","profesores" )->name("profesores");
 
-Route::get("/alumno/{numero}",fn($numero)=>view("alumno" , ["numero"=>$numero]));
-Route::get("/profesor/{id}",fn($id)=>view("profesor" , ["id"=>$id]));
+Route::view("about","about" )->name("about");
+Route::view("teachers","teachers.index" )->name("teachers");
+Route::view("students","students.index" )->name("students");
+
+//Route::get("/alumno/{numero}",fn($numero)=>view("alumno" , ["numero"=>$numero]));
+//Route::get("/profesor/{id}",fn($id)=>view("profesor" , ["id"=>$id]));
 
 Route::get('/dashboard', function () {
     return view('dashboard');
