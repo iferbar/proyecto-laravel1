@@ -1,10 +1,10 @@
 <x-layouts.layout>
     <div class="flex flex-row h-main justify-center items-center bg-main">
-        <div class="card image-block hover:image-full w-96 shadow-sm">
+        <div class="card image-block  w-96 shadow-sm">
             <figure>
                 <img
                     src="https://cpilosenlaces.com/wp-content/uploads/2023/04/los-enlaces-centro-400x266.jpg"
-                    alt="Shoes" />
+                    alt="Shoes" class="lg:h-70"/>
             </figure>
             <div class="card-body">
                 <h2 class="card-title">{{__("NUESTRA HISTORIA")}}</h2>

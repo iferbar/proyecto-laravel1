@@ -281,6 +281,15 @@
     "Conoce la historia de nuestro centro": "Découvrez l'histoire de notre centre",
     "VER MAS...": "VOIR PLUS...",
     "Gestion de proyectos": "Gestion de projet",
+    "Gestion de alumnos": "Gestion de étudiants",
+    "Gestion de profesores": "Gestion de professeurs",
     "Aqui vamos a realizar un CRUD completo de proyectos": "Nous allons ici effectuer un CRUD complet des projets.",
-    "Ver Proyectos": "Voir les projets"
+    "Ver Proyectos": "Voir les projets",
+    "Ver Profesores":"Voir professeurs",
+    "Ver Alumnos":"Voir étudiants",
+    "Vamos a ver un Crud de los Alumnos": "Voyons un CRUD des étudiants",
+    "Vamos a ver un Crud de los Profesores": "Voyons un CRUD des professeurs",
+    "Vamos a ver un Crud de los Proyectos": "Voyons un CRUD des projets",
+    "Opciones": "Options",
+    "AÑADIR": "AJOUTER"
 }

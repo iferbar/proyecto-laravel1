@@ -14,12 +14,7 @@ class StudentController extends Controller
     public function index()
     {
         $students = Student::all();
-        $campos=[
-            "name"=>"Nombre",
-            "year"=>"Año",
-            "email"=>"Email",
-            "dni"=>"DNI",
-        ];
+        $campos=Student::getLabels();
         return view('students.index', compact('students','campos'));
         //
     }
@@ -29,6 +24,7 @@ class StudentController extends Controller
      */
     public function create()
     {
+        return view('students.create');
         //
     }
 
@@ -37,6 +33,9 @@ class StudentController extends Controller
      */
     public function store(StoreStudentRequest $request)
     {
+        $datos=$request->input();
+        Student::create($datos);
+        return redirect()->route('student.index');
         //
     }
 

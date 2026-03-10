@@ -281,6 +281,15 @@
     "Conoce la historia de nuestro centro": "Discover the history of our center",
     "VER MAS...": "SEE MORE...",
     "Gestion de proyectos": "Project management",
+    "Gestion de alumnos": "Students management",
+    "Gestion de profesores": "Teachers management",
     "Aqui vamos a realizar un CRUD completo de proyectos": "Here we will perform a complete CRUD of projects",
-    "Ver Proyectos": "See Projects"
+    "Ver Proyectos": "See Projects",
+    "Ver Profesores":"See teachers",
+    "Ver Alumnos":"See students",
+    "Vamos a ver un Crud de los Alumnos": "Let's see a CRUD of the Students",
+    "Vamos a ver un Crud de los Profesores": "Let's see a CRUD of the Teachers",
+    "Vamos a ver un Crud de los Proyectos": "Let's see a CRUD of the Projects",
+    "Opciones": "Options",
+    "AÑADIR": "ADD"
 }

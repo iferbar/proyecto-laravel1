@@ -4,7 +4,7 @@
     'filas'=>[]
 ])
 {{--@dd($campos,$filas,$resource)--}}
-<a href="{{route("$resource.index")}}" class="btn bg-boton-primary border-none m-5">AÑADIR {{strtoupper($resource)}}</a>
+<a href="{{route("$resource.create")}}" class="btn bg-boton-primary border-none m-5">{{__("AÑADIR")}} {{strtoupper($resource)}}</a>
     <div class="flex justify-center ">
         <div class="overflow-x-auto h-90">
             <table class="table table-xs table-pin-rows table-pin-cols">
@@ -13,7 +13,7 @@
                     @foreach($campos as $campo)
                         <th>{{$campo}}</th>
                     @endforeach
-                    <th colspan="2">Acciones</th>
+                    <th colspan="2">{{__("Opciones")}}</th>
                 </tr>
                 </thead>
                 <tbody>

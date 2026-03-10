@@ -15,9 +15,6 @@ Route::get('/', [MainController::class, 'index'])->name('main');
 
 //Route::view("/","main" )->name("main");
 Route::view("noticias","noticias" )->name("noticias");
-Route::view("alumnos","alumnos" )->name("alumnos");
-Route::view("profesores","profesores" )->name("profesores");
-
 Route::view("about","about" )->name("about");
 Route::view("teachers","teachers.index" )->name("teachers");
 Route::view("students","students.index" )->name("students");

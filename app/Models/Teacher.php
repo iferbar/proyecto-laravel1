@@ -9,4 +9,9 @@ class Teacher extends Model
 {
     /** @use HasFactory<\Database\Factories\TeacherFactory> */
     use HasFactory;
+    protected $fillable =['name','phone','email','department'];
+
+    static public function getLabels(){
+        return __("teacher.fields");
+    }
 }

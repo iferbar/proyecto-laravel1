@@ -1,10 +1,10 @@
 <x-layouts.layout>
     <div class="flex flex-row h-main justify-center items-center bg-main">
-        <div class="card image-block hover:image-full w-96 shadow-sm">
+        <div class="card image-block w-96 shadow-sm">
             <figure>
                 <img
                     src="https://marketplace.canva.com/EAFrDm3ydqw/1/0/1600w/canva-presentaci%C3%B3n-noticias-telediario-corporativo-azul-rojo-Vh4S5Wt7FD4.jpg"
-                    alt="Shoes" />
+                    alt="Shoes" class="lg:h-70"/>
             </figure>
             <div class="card-body">
                 <h2 class="card-title">{{__("NOTICIAS")}}</h2>

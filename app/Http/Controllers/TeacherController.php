@@ -14,12 +14,7 @@ class TeacherController extends Controller
     public function index()
     {
         $teachers = Teacher::all();
-        $campos=[
-            "name"=>"Nombre",
-            "phone"=>"Telefono",
-            "email"=>"Email",
-            "department"=>"Departamento",
-        ];
+        $campos=Teacher::getLabels();
         return view('teachers.index', compact('teachers','campos'));
         //
     }
@@ -29,6 +24,7 @@ class TeacherController extends Controller
      */
     public function create()
     {
+        return view('teachers.create');
         //
     }
 
@@ -37,6 +33,9 @@ class TeacherController extends Controller
      */
     public function store(StoreTeacherRequest $request)
     {
+        $datos=$request->input();
+        Teacher::create($datos);
+        return redirect()->route('teachers.index');
         //
     }
 

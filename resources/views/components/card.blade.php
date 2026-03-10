@@ -5,15 +5,15 @@
     "ref"=>"",
     'label'=>'Click me'
 ])
-<div class="card bg-nav w-96 shadow-sm">
+<div class="card bg-nav shadow-sm">
     <figure>
         <img
             src="{{$img}}"
-            alt="{{$title}}" />
+            alt="{{$title}}" class="lg:h-70 h-55" />
     </figure>
     <div class="card-body">
         <h2 class="card-title">{{$title}}</h2>
-        <p>{{$description}}</p>
+        <p class="text-left">{{$description}}</p>
         <div class="card-actions justify-end">
             <a href="{{$ref}}" class="btn bg-boton-primary border-none">{{$label}}</a>
         </div>

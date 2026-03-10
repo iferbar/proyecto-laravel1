@@ -283,8 +283,15 @@
     "Conoce la historia de nuestro centro":  "Conoce la historia de nuestro centro",
     "VER MAS...": "VER MAS...",
     "Gestion de proyectos": "Gestion de proyectos",
+    "Gestion de alumnos": "Gestion de alumnos",
+    "Gestion de profesores": "Gestion de profesores",
     "Aqui vamos a realizar un CRUD completo de proyectos":"Aqui vamos a realizar un CRUD completo de proyectos",
-    "Ver Proyectos":"Ver Proyectos"
-
-
+    "Ver Proyectos":"Ver Proyectos",
+    "Ver Profesores":"Ver Profesores",
+    "Ver Alumnos":"Ver Alumnos",
+    "Vamos a ver un Crud de los Alumnos": "Vamos a ver un Crud de los Alumnos",
+    "Vamos a ver un Crud de los Profesores":"Vamos a ver un Crud de los Profesores",
+    "Vamos a ver un Crud de los Proyectos":"Vamos a ver un Crud de los Proyectos",
+    "Opciones": "Opciones",
+    "AÑADIR": "AÑADIR"
 }
