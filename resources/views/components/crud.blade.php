@@ -3,30 +3,32 @@
     'campos'=>[],
     'filas'=>[]
 ])
-{{--@dd($campos,$filas,$resource)--}}
-<a href="{{route("$resource.create")}}" class="btn bg-boton-primary border-none m-5">{{__("AÑADIR")}} {{strtoupper($resource)}}</a>
+<div class="flex justify-center">
+<a href="{{route("$resource.create")}}" class="btn bg-boton-primary border-none m-5 ">{{__("AÑADIR")}} {{strtoupper($resource)}}</a>
+</div>
+
     <div class="flex justify-center ">
-        <div class="overflow-x-auto h-90">
-            <table class="table table-xs table-pin-rows table-pin-cols">
+        <div class="overflow-x-auto ">
+            <table class="table table-xs table-pin-rows table-pin-cols rounded-box border border-black">
                 <thead>
-                <tr  class="lg:text-2xl text-center">
+                <tr  class="lg:text-2xl text-center gap-5">
                     @foreach($campos as $campo)
-                        <th>{{$campo}}</th>
+                        <th class="rounded-box">{{$campo}}</th>
                     @endforeach
-                    <th colspan="2">{{__("Opciones")}}</th>
+                    <th class="rounded-box" colspan="2">{{__("Opciones")}}</th>
                 </tr>
                 </thead>
                 <tbody>
                 @foreach($filas as $fila)
-                    <tr class="lg:text-sm">
+                    <tr class="lg:text-sm ">
                         @foreach($campos as $atributo => $valor)
-                            <td>{{$fila->$atributo}}</td>
+                            <td class="border-black p-5">{{$fila->$atributo}}</td>
                         @endforeach
 
-                            <td>
+                            <td class="border-black">
                                 <a href ="{{route("$resource.edit",$fila->id)}}" class="btn btn-info text-white">Editar</a>
                             </td>
-                            <td>
+                            <td class="border-black">
             <form action="{{route("$resource.destroy",$fila->id)}}" method="POST">
                 @csrf
                 @method('DELETE')
@@ -38,5 +40,8 @@
                 @endforeach
     </tbody>
     </table>
+            <div class="my-10">
+                {{$filas->links("pagination::simple-tailwind")}}
+            </div>
     </div>
     </div>

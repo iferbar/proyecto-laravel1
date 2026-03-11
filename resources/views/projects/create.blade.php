@@ -52,10 +52,13 @@
                 />
             </div>
 
-            <div class="flex justify-end mt-6">
+            <div class="flex justify-end mt-6 gap-10">
                 <x-primary-button>
                     {{ __('Create Project') }}
                 </x-primary-button>
+                <x-boton>
+                    {{ __('Cancel') }}
+                </x-boton>
             </div>
 
         </form>
