@@ -2,6 +2,7 @@
     @auth
     <a href="{{route('students.index')}}" class="hidden lg:block w-full lg:w-auto"><button class="btn btn-md shadow-none bg-boton-primary border-transparent hover:bg-boton-secondary lg:w-30 lg:h-10 w-full my-0.5">{{__("Alumnos")}}</button></a>
     <a href="{{route('teachers.index')}}" class="hidden lg:block w-full lg:w-auto"><button class="btn btn-md shadow-none bg-boton-primary border-transparent hover:bg-boton-secondary lg:w-30 lg:h-10 w-full my-0.5">{{__("Profesores")}}</button></a>
+        <a href="{{route('projects.index')}}" class="hidden lg:block w-full lg:w-auto"><button class="btn btn-md shadow-none bg-boton-primary border-transparent hover:bg-boton-secondary lg:w-30 lg:h-10 w-full my-0.5">{{__("Proyectos")}}</button></a>
     @endauth
     <a href="{{route("noticias")}}" class="hidden lg:block w-full lg:w-auto"><button class="btn btn-md shadow-none bg-boton-primary border-transparent hover:bg-boton-secondary lg:w-30 lg:h-10 w-full my-0.5">{{__("Noticias")}}</button></a>
     <a href="{{route("about")}}" class="hidden lg:block w-full lg:w-auto"><button class="btn btn-md shadow-none bg-boton-primary border-transparent hover:bg-boton-secondary lg:w-30 lg:h-10 w-full my-0.5">{{__("Sobre Nosotros")}}</button></a>
@@ -32,6 +33,7 @@
                             @auth
                             <a href="{{route('students.index')}}" class="w-full lg:w-auto"><button class="btn btn-md shadow-none bg-boton-primary border-transparent hover:bg-boton-secondary lg:w-30 lg:h-10 w-full my-0.5">{{__("Alumnos")}}</button></a>
                             <a href="{{route('teachers.index')}}" class="w-full lg:w-auto"><button class="btn btn-md shadow-none bg-boton-primary border-transparent hover:bg-boton-secondary lg:w-30 lg:h-10 w-full my-0.5">{{__("Profesores")}}</button></a>
+                                <a href="{{route('projects.index')}}" class="w-full lg:w-auto"><button class="btn btn-md shadow-none bg-boton-primary border-transparent hover:bg-boton-secondary lg:w-30 lg:h-10 w-full my-0.5">{{__("Proyectos")}}</button></a>
                             @endauth
                             <a href="{{route("noticias")}}" class="w-full lg:w-auto"><button class="btn btn-md shadow-none bg-boton-primary border-transparent hover:bg-boton-secondary lg:w-30 lg:h-10 w-full my-0.5">{{__("Noticias")}}</button></a>
                             <a href="{{route("about")}}" class="w-full lg:w-auto"><button class="btn btn-md shadow-none bg-boton-primary border-transparent hover:bg-boton-secondary lg:w-30 lg:h-10 w-full my-0.5">{{__("Sobre Nosotros")}}</button></a>

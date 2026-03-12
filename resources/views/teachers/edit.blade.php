@@ -1,11 +1,10 @@
 <x-layouts.layout>
-
     <div class="flex justify-center items-center min-h-full bg-gray-200">
 
-        <form method="POST" action="{{ route('teachers.update',$teacher->id) }}" class="bg-white p-4 rounded-2xl">
+        <form method="POST" action="{{ route('teachers.update',$teacher->id) }}?page={{request()->get('page')}}" class="bg-white p-4 rounded-2xl">
 
             @csrf
-            @method('PUT')
+            @method('PATCH')
 
             <!-- Name -->
             <div>

@@ -29,17 +29,17 @@
                     <div class="flex flex-row h-main justify-center items-center gap-10">
                         <x-card :label="__('Ver Alumnos')"
                                 :img="asset('/images/students.jpg')"
-                                :title="__('Gestion de alumnos')"
+                                :title="__('Gestión de alumnos')"
                                 :description="__('Vamos a ver un Crud de los Alumnos')"
                                 ref="{{route('students.index')}}" />
                         <x-card :label="__('Ver Profesores')"
                                 :img="asset('/images/teachers.jpg')"
-                                :title="__('Gestion de profesores')"
+                                :title="__('Gestión de profesores')"
                                 :description="__('Vamos a ver un Crud de los Profesores')"
                                 ref="{{route('teachers.index')}}" />
                         <x-card :label="__('Ver Proyectos')"
                                 :img="asset('/images/proyects.jpg')"
-                                :title="__('Gestion de proyectos')"
+                                :title="__('Gestión de proyectos')"
                                 :description="__('Vamos a ver un Crud de los Proyectos')"
                                 ref="{{route('projects.index')}}" />
                     </div>

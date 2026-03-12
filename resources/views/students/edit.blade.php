@@ -33,15 +33,15 @@
                 />
             </div>
 
-            <!-- Phone -->
+            <!-- Email -->
             <div class="mt-4">
-                <x-input-label for="phone" :value="__('Phone')" />
+                <x-input-label for="email" :value="__('Email')" />
                 <x-text-input
-                    id="phone"
+                    id="email"
                     class="block mt-1 w-full"
                     type="text"
-                    name="phone"
-                    value="{{$student->phone}}"
+                    name="email"
+                    value="{{$student->email}}"
                     required
                 />
             </div>

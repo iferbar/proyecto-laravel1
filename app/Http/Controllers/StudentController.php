@@ -5,13 +5,14 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreStudentRequest;
 use App\Http\Requests\UpdateStudentRequest;
 use App\Models\Student;
+use App\Models\Teacher;
 
 class StudentController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(int $page=1)
     {
         $students = Student::paginate(5);
         $campos=Student::getLabels();
@@ -53,7 +54,8 @@ class StudentController extends Controller
      */
     public function edit(Student $student)
     {
-        return view('students.edit',compact('student'));
+        $page=request()->get('page');
+        return view('students.edit',compact('student','page'));
         //
     }
 
@@ -62,9 +64,10 @@ class StudentController extends Controller
      */
     public function update(UpdateStudentRequest $request, Student $student)
     {
+        $page=request()->get('page');
         $datos=$request->input();
         $student->update($datos);
-        return redirect()->route('students.index');
+        return redirect()->route('students.index',['page'=>$page]);
         //
     }
 
@@ -73,8 +76,16 @@ class StudentController extends Controller
      */
     public function destroy(Student $student)
     {
+//        $page=request()->get('page');
+//        $lastpage=Student::paginate()->lastPage();
+//        if($page>$lastpage){
+//            $page--;
+//        }
+        $page = request('page', 1);
+        $lastPage = Teacher::paginate(10)->lastPage();
+        $page = min($page, $lastPage);
         $student->delete();
-        return redirect()->route('students.index');
+        return redirect()->route('students.index',['page'=>$page]);
         //
     }
 }

@@ -4,11 +4,13 @@
     <img src="{{asset("/images/logo2.png")}}" alt="logo" class="w-3xs">
     </a>
     <h1 class="text-4xl">{{__("Gestión de instituto")}}</h1>
-    <div class="space-x-5">
+    <div class="space-x-5 items-center">
 
             @guest
+                <div class="m-0">
         <button class="btn btn-lg shadow-none bg-boton-primary border-transparent hover:bg-boton-secondary"><a href="{{route("login")}}">{{__("Login")  }}</a></button>
         <button class="btn btn-lg shadow-none bg-boton-primary border-transparent hover:bg-boton-secondary"><a href="{{route("register")}}">{{__("Register")  }}</a></button>
+                </div>
             @endguest
 
             @auth
@@ -23,12 +25,19 @@
 
                 <form action="{{route("lang")}}" method="POST">
                     @csrf
-                    <select name="lang" id="lang" class="w-70 my-3 text-2xl border-white border-botton border-b-2 cursor-pointer"
+                    <select name="lang" id="lang" class="w-full my-3 text-2xl border-white border-botton border-b-2 cursor-pointer"
                             onchange="this.form.submit()">
 
-                        <option selected disabled>{{__("Selecciona idioma")  }}</option>
+                        <option selected disabled
+                            {{ !session('lang') ? 'selected' : '' }}>
+                            {{__("Selecciona idioma")  }}
+                        </option>
+
                         @foreach(config("languages") as $lang=>$detail)
-                            <option value="{{$lang}}" class="text-black"> {{     $detail['name'] }} {{ $detail['flag'] }}</option>
+                            <option value="{{$lang}}" class="text-black"
+                                {{ session('lang') == $lang ? 'selected' : '' }}>
+                                {{$detail['name'] }} {{ $detail['flag'] }}
+                            </option>
                         @endforeach
                     </select>
                 </form>

@@ -5,13 +5,14 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
 use App\Models\Project;
+use App\Models\Teacher;
 
 class ProjectController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(int $page=1)
     {
         $projects = Project::paginate(5);
         $campos=[
@@ -58,6 +59,7 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
+        $page=request()->get('page');
         return view('projects.edit', compact('project'));
         //
     }
@@ -67,9 +69,10 @@ class ProjectController extends Controller
      */
     public function update(UpdateProjectRequest $request, Project $project)
     {
+        $page=request()->get('page');
         $datos = $request->input();
         $project->update($datos);
-        return redirect()->route('projects.index');
+        return redirect()->route('projects.index',['page'=>$page]);
         //
     }
 
@@ -78,8 +81,12 @@ class ProjectController extends Controller
      */
     public function destroy(Project $project)
     {
+        $page = request('page', 1);
+        $lastPage = Project::paginate(10)->lastPage();
+        $page = min($page, $lastPage);
+
         $project->delete();
-        return redirect()->route('projects.index');
+        return redirect()->route('projects.index',['page'=>$page]);
         //
     }
 }
