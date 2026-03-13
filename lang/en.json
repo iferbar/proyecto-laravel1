@@ -292,5 +292,7 @@
     "Vamos a ver un Crud de los Profesores": "Let's see a CRUD of the Teachers",
     "Vamos a ver un Crud de los Proyectos": "Let's see a CRUD of the Projects",
     "Opciones": "Options",
-    "AÑADIR": "ADD"
+    "AÑADIR": "ADD",
+    "Borrar definitivo": "Permanently delete",
+    "Seguro que quieres borrar": "Surely you want to delete"
 }

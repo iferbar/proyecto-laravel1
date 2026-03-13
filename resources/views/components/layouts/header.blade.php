@@ -4,10 +4,10 @@
     <img src="{{asset("/images/logo2.png")}}" alt="logo" class="w-3xs">
     </a>
     <h1 class="text-4xl">{{__("Gestión de instituto")}}</h1>
-    <div class="space-x-5 items-center">
+    <div class="space-x-5 items-center w-80">
 
             @guest
-                <div class="m-0">
+                <div class="m-0 flex justify-between gap-5">
         <button class="btn btn-lg shadow-none bg-boton-primary border-transparent hover:bg-boton-secondary"><a href="{{route("login")}}">{{__("Login")  }}</a></button>
         <button class="btn btn-lg shadow-none bg-boton-primary border-transparent hover:bg-boton-secondary"><a href="{{route("register")}}">{{__("Register")  }}</a></button>
                 </div>

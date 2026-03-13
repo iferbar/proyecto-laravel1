@@ -292,5 +292,7 @@
     "Vamos a ver un Crud de los Profesores": "Voyons un CRUD des professeurs",
     "Vamos a ver un Crud de los Proyectos": "Voyons un CRUD des projets",
     "Opciones": "Options",
-    "AÑADIR": "AJOUTER"
+    "AÑADIR": "AJOUTER",
+    "Borrar definitivo": "Supprimer définitivement",
+    "Seguro que quieres borrar": "Vous voulez sûrement supprimer"
 }

@@ -50,10 +50,15 @@
     function confirmarDelete(button){
         Swal.fire(
             {
-                title: "Seguro que quieres borrar",
+                title: "{{ __('Seguro que quieres borrar') }}",
                 icon: "question",
                 showCancelButton:true,
-                confirmButtonText: "Borrar definitivo"
+                confirmButtonText: "{{__("Borrar definitivo")}}",
+                theme: 'bulma',
+                customClass: {
+                    confirmButton: 'btn-confirm',
+                    cancelButton: 'btn-cancel'
+                }
             }
         ).then((result) => {
             if (result.isConfirmed)

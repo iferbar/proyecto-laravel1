@@ -24,10 +24,10 @@
     --color-boton-primary:#2E8B57;
     --color-boton-secondary:#61bc84;
 
-
-
-
-
+}
+.swal2-actions {
+    display: flex;
+    justify-content: space-around;
 }
 .boton{
     @apply bg-amber-300 text-5xl
