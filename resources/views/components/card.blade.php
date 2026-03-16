@@ -5,11 +5,11 @@
     "ref"=>"",
     'label'=>'Click me'
 ])
-<div class="card bg-nav shadow-sm">
+<div class="card bg-nav shadow-sm flex">
     <figure>
         <img
             src="{{$img}}"
-            alt="{{$title}}" class="lg:h-70 h-55" />
+            alt="{{$title}}" class="flex lg:h-70 h-55"/>
     </figure>
     <div class="card-body">
         <h2 class="card-title">{{$title}}</h2>

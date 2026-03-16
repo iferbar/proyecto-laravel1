@@ -41,5 +41,7 @@ Route::fallback(function () {
 Route::post("language",LangController::class)->name('lang');
 
 Route::resource("projects",ProjectController::class)->middleware('auth');
-Route::resource("teachers",TeacherController::class);
-Route::resource("students",StudentController::class);
+Route::resource("teachers",TeacherController::class)->middleware('auth');
+Route::resource("students",StudentController::class)->middleware('auth');
+Route::resource("users",UsersController::class)->middleware('auth');
+Route::resource("registered",RegisteredController::class)->middleware('auth');

@@ -1,7 +1,8 @@
 <x-layouts.layout>
     <x-crud
         resource="teachers"
-        :filas="$teachers"
-        :campos="$campos"
+        :rows="$rows"
+        :fields="$fields"
+        :table="$table"
     />
 </x-layouts.layout>

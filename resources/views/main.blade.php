@@ -42,6 +42,16 @@
                                 :title="__('Gestión de proyectos')"
                                 :description="__('Vamos a ver un Crud de los Proyectos')"
                                 ref="{{route('projects.index')}}" />
+                        <x-card :label="__('Ver Registrados')"
+                                :img="asset('/images/registrados.jpg')"
+                                :title="__('Gestión de Registrados')"
+                                :description="__('Vamos a ver un Crud de los Registrados')"
+                                ref="{{route('projects.index')}}" />
+                        <x-card :label="__('Ver Usuarios')"
+                                :img="asset('/images/usuarios.jpg')"
+                                :title="__('Gestión de Usuarios')"
+                                :description="__('Vamos a ver un Crud de los Usuarios')"
+                                ref="{{route('projects.index')}}" />
                     </div>
                 </div>
             </div>
