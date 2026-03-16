@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreStudentRequest;
 use App\Http\Requests\UpdateStudentRequest;
 use App\Models\Student;
-use App\Models\Teacher;
+use App\Models\User;
 
 class StudentController extends Controller
 {
@@ -14,9 +14,13 @@ class StudentController extends Controller
      */
     public function index(int $page=1)
     {
-        $students = Student::paginate(5);
-        $campos=Student::getLabels();
-        return view('students.index', compact('students','campos'));
+        $rows= User::role('student')->paginate(5);
+
+        $fields=User::getLabels()['fields'];
+        $fields['department']=User::getLabels()['department'];
+        $table=User::getLabels()['rol']['students'];
+        return view('teachers.index', compact('rows','fields','table'));
+
         //
     }
 

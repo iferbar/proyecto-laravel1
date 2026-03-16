@@ -25,8 +25,8 @@
         backdrop-filter: blur(100%);"
             >
                 <div class="hero-overlay bg-green-900/50 backdrop-blur-sm"></div>
-                <div class="hero-content text-neutral-content text-center">
-                    <div class="flex flex-row h-main justify-center items-center gap-10">
+                <div class="flex text-neutral-content text-center px-5">
+                    <div class="flex flex-row h-main justify-center items-center gap-5">
                         <x-card :label="__('Ver Alumnos')"
                                 :img="asset('/images/students.jpg')"
                                 :title="__('Gestión de alumnos')"
@@ -44,12 +44,12 @@
                                 ref="{{route('projects.index')}}" />
                         <x-card :label="__('Ver Registrados')"
                                 :img="asset('/images/registrados.jpg')"
-                                :title="__('Gestión de Registrados')"
+                                :title="__('Gestión de registrados')"
                                 :description="__('Vamos a ver un Crud de los Registrados')"
                                 ref="{{route('projects.index')}}" />
                         <x-card :label="__('Ver Usuarios')"
                                 :img="asset('/images/usuarios.jpg')"
-                                :title="__('Gestión de Usuarios')"
+                                :title="__('Gestión de usuarios')"
                                 :description="__('Vamos a ver un Crud de los Usuarios')"
                                 ref="{{route('projects.index')}}" />
                     </div>

@@ -6,12 +6,12 @@
     'table'=>""
 ])
 <div class="flex justify-center">
-<a href="{{route("$resource.create")}}" class="btn bg-boton-primary border-none m-5 ">{{__("AÑADIR")}} {{$table}}</a>
+<a href="{{route("$resource.create")}}" class="btn bg-boton-primary hover:bg-boton-secondary border-none m-5 ">{{__("Añadir")}} {{$table}}</a>
 </div>
 
     <div class="flex justify-center">
         <div class="overflow-x-auto w-9/12">
-            <table class="table table-md table-pin-rows table-pin-cols rounded-box  bg-white shadow-md">
+            <table class="table table-sm table-pin-rows table-pin-cols rounded-box  bg-white shadow-md">
                 <thead>
                 <tr class="lg:text-2xl text-center gap-5">
                     @foreach($fields as $field)
@@ -22,9 +22,13 @@
                 </thead>
                 <tbody>
                 @foreach($rows as $row)
-                    <tr class="lg:text-sm">
+                    <tr class="lg:text-sm ">
                         @foreach($fields as $atribute => $value)
-                            <td class="border-b-gray-400  text-md">{{$row->$atribute}}</td>
+                            <td class="border-b-gray-400 text-md ">
+                                <div class="{{ in_array($atribute,['password']) ? 'max-w-3xs truncate' : '' }}">
+                                    {{$row->$atribute}}
+                                </div>
+                            </td>
                         @endforeach
 
                             <td class="border-b-gray-400">
