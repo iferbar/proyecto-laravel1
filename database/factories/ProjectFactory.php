@@ -16,14 +16,8 @@ class ProjectFactory extends Factory
      */
     public function definition(): array
     {
-        $projects = config('projects');
-        $title= array_rand($projects,1);
-        $project = $projects[$title];
         return [
-            "name" => $title,
-            "description" =>  $project,
-            "hours" => $this->faker->numberBetween(10, 200),
-            "start_date" => $this->faker->date(),
+            //
         ];
     }
 }

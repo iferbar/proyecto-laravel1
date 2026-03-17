@@ -1,4 +1,6 @@
 <?php
+
+use App\Http\Controllers\CrudController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProjectController;
@@ -40,8 +42,18 @@ Route::fallback(function () {
 
 Route::post("language",LangController::class)->name('lang');
 
-Route::resource("projects",ProjectController::class)->middleware('auth');
-Route::resource("teachers",TeacherController::class)->middleware('auth');
-Route::resource("students",StudentController::class)->middleware('auth');
-Route::resource("users",UsersController::class)->middleware('auth');
-Route::resource("registered",RegisteredController::class)->middleware('auth');
+//Route::resource("projects",ProjectController::class)->middleware('auth');
+//Route::resource("teachers",TeacherController::class)->middleware('auth');
+//Route::resource("students",StudentController::class)->middleware('auth');
+//Route::resource("users",UsersController::class)->middleware('auth');
+//Route::resource("{resource}",CrudController::class)->middleware('auth');
+
+Route::get("{resource}",[CrudController::class,"index"])->name("crud.index");
+//crear recurso
+Route::get("{resource}/create",[CrudController::class,"create"])->name("crud.create");
+Route::post("{resource}",[CrudController::class,"store"])->name("crud.store");
+//borrado
+Route::delete("{resource}/{id}}",[CrudController::class,"destroy"])->name("crud.destroy");
+//actualizacion
+Route::get("{resource}/{id}/edit}",[CrudController::class,"edit"])->name("crud.edit");
+Route::put("{resource}/{id}",[CrudController::class,"update"])->name("crud.update");

@@ -27,31 +27,45 @@
                 <div class="hero-overlay bg-green-900/50 backdrop-blur-sm"></div>
                 <div class="flex text-neutral-content text-center px-5">
                     <div class="flex flex-row h-main justify-center items-center gap-5">
-                        <x-card :label="__('Ver Alumnos')"
-                                :img="asset('/images/students.jpg')"
-                                :title="__('Gestión de alumnos')"
-                                :description="__('Vamos a ver un Crud de los Alumnos')"
-                                ref="{{route('students.index')}}" />
-                        <x-card :label="__('Ver Profesores')"
-                                :img="asset('/images/teachers.jpg')"
-                                :title="__('Gestión de profesores')"
-                                :description="__('Vamos a ver un Crud de los Profesores')"
-                                ref="{{route('teachers.index')}}" />
-                        <x-card :label="__('Ver Proyectos')"
-                                :img="asset('/images/proyects.jpg')"
-                                :title="__('Gestión de proyectos')"
-                                :description="__('Vamos a ver un Crud de los Proyectos')"
-                                ref="{{route('projects.index')}}" />
-                        <x-card :label="__('Ver Registrados')"
-                                :img="asset('/images/registrados.jpg')"
-                                :title="__('Gestión de registrados')"
-                                :description="__('Vamos a ver un Crud de los Registrados')"
-                                ref="{{route('projects.index')}}" />
-                        <x-card :label="__('Ver Usuarios')"
-                                :img="asset('/images/usuarios.jpg')"
-                                :title="__('Gestión de usuarios')"
-                                :description="__('Vamos a ver un Crud de los Usuarios')"
-                                ref="{{route('projects.index')}}" />
+
+                        @foreach(config("resources") as $resource)
+                            <x-card
+{{--                                    :label='__("Ver $resource")'--}}
+                                    :label="__('Ver :resource', ['resource' => $resource])"
+                                    :img='asset("/images/$resource.jpg")'
+                                    :title="__('Gestión de :resource', ['resource' => $resource])"
+                                    :description="__('Vamos a ver un Crud de los :resource', ['resource' => $resource])"
+                                    :ref="route('crud.index', $resource)" />
+                        @endforeach
+
+
+
+
+{{--                        <x-card :label="__('Ver Alumnos')"--}}
+{{--                                :img="asset('/images/students.jpg')"--}}
+{{--                                :title="__('Gestión de alumnos')"--}}
+{{--                                :description="__('Vamos a ver un Crud de los Alumnos')"--}}
+{{--                                ref="{{route('students.index')}}" />--}}
+{{--                        <x-card :label="__('Ver Profesores')"--}}
+{{--                                :img="asset('/images/teachers.jpg')"--}}
+{{--                                :title="__('Gestión de profesores')"--}}
+{{--                                :description="__('Vamos a ver un Crud de los Profesores')"--}}
+{{--                                ref="{{route('teachers.index')}}" />--}}
+{{--                        <x-card :label="__('Ver Proyectos')"--}}
+{{--                                :img="asset('/images/projects.jpg')"--}}
+{{--                                :title="__('Gestión de proyectos')"--}}
+{{--                                :description="__('Vamos a ver un Crud de los Proyectos')"--}}
+{{--                                ref="{{route('projects.index')}}" />--}}
+{{--                        <x-card :label="__('Ver Registrados')"--}}
+{{--                                :img="asset('/images/guests.jpg')"--}}
+{{--                                :title="__('Gestión de registrados')"--}}
+{{--                                :description="__('Vamos a ver un Crud de los Registrados')"--}}
+{{--                                ref="{{route('projects.index')}}" />--}}
+{{--                        <x-card :label="__('Ver Usuarios')"--}}
+{{--                                :img="asset('/images/users.jpg')"--}}
+{{--                                :title="__('Gestión de users')"--}}
+{{--                                :description="__('Vamos a ver un Crud de los Usuarios')"--}}
+{{--                                ref="{{route('projects.index')}}" />--}}
                     </div>
                 </div>
             </div>
