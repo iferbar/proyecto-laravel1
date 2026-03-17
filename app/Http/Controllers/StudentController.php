@@ -17,7 +17,7 @@ class StudentController extends Controller
         $rows= User::role('student')->paginate(5);
 
         $fields=User::getLabels()['fields'];
-        $fields['department']=User::getLabels()['department'];
+//        $fields['department']=User::getLabels()['department'];
         $table=User::getLabels()['rol']['students'];
         return view('teachers.index', compact('rows','fields','table'));
 
