@@ -2,8 +2,10 @@
 
 namespace Database\Seeders;
 
+use App\Models\Task;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Arr;
 
 class TaskSeeder extends Seeder
 {
@@ -12,6 +14,15 @@ class TaskSeeder extends Seeder
      */
     public function run(): void
     {
+        $tasks = config('tasks');
+        foreach ($tasks as $task=>$description) {
+            Task::create([
+                'name' => $task,
+                'description' => $description,
+                "status"=>Arr::random(['stopped','started','completed']),
+                "priority"=>Arr::random(['low','medium','top']),
+            ]);
+        }
         //
     }
 }

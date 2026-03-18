@@ -42,6 +42,8 @@ Route::fallback(function () {
 
 Route::post("language",LangController::class)->name('lang');
 
+Route::middleware('auth')->group(function () {
+
 //Route::resource("projects",ProjectController::class)->middleware('auth');
 //Route::resource("teachers",TeacherController::class)->middleware('auth');
 //Route::resource("students",StudentController::class)->middleware('auth');
@@ -57,3 +59,4 @@ Route::delete("{resource}/{id}}",[CrudController::class,"destroy"])->name("crud.
 //actualizacion
 Route::get("{resource}/{id}/edit}",[CrudController::class,"edit"])->name("crud.edit");
 Route::put("{resource}/{id}",[CrudController::class,"update"])->name("crud.update");
+});

@@ -1,6 +1,6 @@
 <x-layouts.layout>
     <x-crud
-        resource="teachers"
+        :resource="$resource"
         :rows="$rows"
         :fields="$fields"
         :table="$table"

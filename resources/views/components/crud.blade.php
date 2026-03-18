@@ -6,7 +6,7 @@
     'table'=>""
 ])
 <div class="flex justify-center">
-<a href="{{route("$resource.create")}}" class="btn bg-boton-primary hover:bg-boton-secondary border-none m-5 ">{{__("Añadir")}} {{$table}}</a>
+<a href="{{route("crud.create", $resource)}}" class="btn bg-boton-primary hover:bg-boton-secondary border-none m-5 ">{{__("Añadir")}} {{$table}}</a>
 </div>
 
     <div class="flex justify-center">
@@ -32,10 +32,10 @@
                         @endforeach
 
                             <td class="border-b-gray-400">
-                                <a href ="{{route("$resource.edit",$row->id)}}?page={{$page}}" class="btn btn-info text-white">Editar</a>
+                                <a href ="{{route("crud.edit",[$resource, $row->id])}}?page={{$page}}" class="btn btn-info text-white">Editar</a>
                             </td>
                             <td class="border-b-gray-400">
-                                <form action="{{route("$resource.destroy",$row->id)}}?page={{$page}}" method="POST">
+                                <form action="{route("crud.destroy",[$resource, $row->id])}}?page={{$page}}" method="POST">
                 @csrf
                 @method('DELETE')
                 <input type="button" value="Borrar" class="btn btn-error text-white" onclick="confirmarDelete(this)"

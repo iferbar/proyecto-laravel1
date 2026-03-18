@@ -1,5 +1,5 @@
 <nav class="lg:h-nav bg-nav flex flex-col lg:flex-row justify-center lg:justify-end items-stretch lg:items-center border-t border-boton-secondary p-2 lg:space-x-5">
-        @foreach(config("resources") as $resource)
+        @foreach(config("resources") as $resource =>$data)
             <a href="{{route('crud.index',$resource)}}" class="hidden lg:block w-full lg:w-auto"><button class="btn btn-md shadow-none bg-boton-primary border-transparent hover:bg-boton-secondary lg:w-30 lg:h-10 w-full my-0.5">{{__("$resource")}}</button></a>
         @endforeach
 {{--    <a href="{{route('students.index')}}" class="hidden lg:block w-full lg:w-auto"><button class="btn btn-md shadow-none bg-boton-primary border-transparent hover:bg-boton-secondary lg:w-30 lg:h-10 w-full my-0.5">{{__("Alumnos")}}</button></a>--}}
@@ -31,7 +31,7 @@
                             <h2 id="drawer-title" class="text-base font-semibold text-white">Menu</h2>
                         </div>
                         <div class="relative mt-6 flex-1 px-4 sm:px-6">
-                            @foreach(config("resources") as $resource)
+                            @foreach(config("resources") as $resource =>$data)
                                 <a href="{{route('crud.index',$resource)}}" class="w-full lg:w-auto"><button class="btn btn-md shadow-none bg-boton-primary border-transparent hover:bg-boton-secondary lg:w-30 lg:h-10 w-full my-0.5">{{__("$resource")}}</button></a>
                             @endforeach
 {{--                            <a href="{{route('students.index')}}" class="w-full lg:w-auto"><button class="btn btn-md shadow-none bg-boton-primary border-transparent hover:bg-boton-secondary lg:w-30 lg:h-10 w-full my-0.5">{{__("Alumnos")}}</button></a>--}}

@@ -15,12 +15,7 @@ class ProjectController extends Controller
     public function index(int $page=1)
     {
         $projects = Project::paginate(5);
-        $campos=[
-            "name"=>"Nombre",
-            "description"=>"Descripcion",
-            "hours"=>"Horas",
-            "start_date"=>"Fecha de comienzo",
-        ];
+        $campos = Project::getLabels();
         return view('projects.index', compact('projects','campos'));
     }
 

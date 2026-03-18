@@ -37,9 +37,38 @@ class GenerateModels extends Command
                     '--factory'=>true,
                     '--seed'=>true
                 ]);
-//            php artisan make:model $resource -fms
+            $fillable = $this-> getStringFillable($data['fields']);
+            $getFields= $this-> getStringGetFields($resource);
+            $modelPath= app_path("Models/$model.php");
+            $this -> getContentFileModel($modelPath,$fillable,$getFields);
         }
-        //
     $this->info('Models generados');
+    }
+    private function getStringFillable(array $fields){
+        $fillable = implode("', '", $fields);
+
+
+        $fillable = "\tprotected \$fillable = ['$fillable'];\n";
+
+        return $fillable;
+
+    }
+    private function getStringGetFields(string $resource){
+        $function =<<<FIN
+        public static function getFields(){
+            return __("$resource.fields");
+        }
+FIN;
+        return $function;
+    }
+    private function getContentFileModel(string $modelPath, string $fillable, string $getFields){
+        //Tomamos el contenido completo del fichero
+        //remplazamos la palabra HasFactory; por HasFactory; $fillable $getFields
+        //Escribimo de nuevo en el ficheor en nuevo contenido
+        $content = file_get_contents($modelPath);
+        $searach= "use HasFactory;";
+        $replace = "use HasFactory;\n\n  $fillable\n  $getFields";
+        $content = str_replace($searach, $replace, $content);
+        file_put_contents($modelPath, $content);
     }
 }

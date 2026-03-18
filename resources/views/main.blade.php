@@ -28,13 +28,12 @@
                 <div class="flex text-neutral-content text-center px-5">
                     <div class="flex flex-row h-main justify-center items-center gap-5">
 
-                        @foreach(config("resources") as $resource)
+                        @foreach(config("resources") as $resource => $data)
                             <x-card
-{{--                                    :label='__("Ver $resource")'--}}
-                                    :label="__('Ver :resource', ['resource' => $resource])"
+                                    :label="__('Ver :resource', ['resource' => __($resource)])"
                                     :img='asset("/images/$resource.jpg")'
-                                    :title="__('Gestión de :resource', ['resource' => $resource])"
-                                    :description="__('Vamos a ver un Crud de los :resource', ['resource' => $resource])"
+                                    :title="__('Gestión de :resource', ['resource' => __($resource)])"
+                                    :description="__('Vamos a ver un Crud de los :resource', ['resource' => __($resource)])"
                                     :ref="route('crud.index', $resource)" />
                         @endforeach
 
