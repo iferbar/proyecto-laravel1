@@ -16,6 +16,6 @@ class User extends Authenticatable
     protected $fillable = ['name', 'email', 'dni', 'phone', 'password'];
 
     public static function getFields(){
-        return __("projects.fields");
+        return __("users.fields");
     }
 }

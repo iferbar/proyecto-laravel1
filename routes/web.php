@@ -1,16 +1,16 @@
 <?php
 
+
 use App\Http\Controllers\CrudController;
 use App\Http\Controllers\MainController;
+
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\TeacherController;
-use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
-
-use App\Http\Controllers\Auth\AuthenticatedSessionController;
-use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\LangController;
+use App\Http\Controllers\StudentController;
+use App\Http\Controllers\UserController;
 
 Route::get('/', [MainController::class, 'index'])->name('main');
 
@@ -18,11 +18,8 @@ Route::get('/', [MainController::class, 'index'])->name('main');
 //Route::view("/","main" )->name("main");
 Route::view("noticias","noticias" )->name("noticias");
 Route::view("about","about" )->name("about");
-Route::view("teachers","teachers.index" )->name("teachers");
-Route::view("students","students.index" )->name("students");
 
-//Route::get("/alumno/{numero}",fn($numero)=>view("alumno" , ["numero"=>$numero]));
-//Route::get("/profesor/{id}",fn($id)=>view("profesor" , ["id"=>$id]));
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -50,13 +47,13 @@ Route::middleware('auth')->group(function () {
 //Route::resource("users",UsersController::class)->middleware('auth');
 //Route::resource("{resource}",CrudController::class)->middleware('auth');
 
-Route::get("{resource}",[CrudController::class,"index"])->name("crud.index");
-//crear recurso
-Route::get("{resource}/create",[CrudController::class,"create"])->name("crud.create");
-Route::post("{resource}",[CrudController::class,"store"])->name("crud.store");
-//borrado
-Route::delete("{resource}/{id}}",[CrudController::class,"destroy"])->name("crud.destroy");
-//actualizacion
-Route::get("{resource}/{id}/edit}",[CrudController::class,"edit"])->name("crud.edit");
-Route::put("{resource}/{id}",[CrudController::class,"update"])->name("crud.update");
+    Route::get("{resource}", [CrudController::class, "index"])->name("crud.index");//Listado
+//Crear un recurso
+    Route::get("{resource}/create", [CrudController::class, "create"])->name("crud.create");
+    Route::post("{resource}", [CrudController::class, "store"])->name("crud.store");
+//Borrado
+    Route::delete("{resource}/{id}", [CrudController::class, "destroy"])->name("crud.destroy");
+//Actualizacion
+    Route::get("{resource}/{id}/edit", [CrudController::class, "edit"])->name("crud.edit");
+    Route::put("{resource}/{id}", [CrudController::class, "update"])->name("crud.update");
 });

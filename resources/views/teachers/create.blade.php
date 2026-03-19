@@ -1,10 +1,8 @@
-<x-layouts.layout>
-
-    <div class="flex justify-center items-center min-h-full bg-gray-200">
-
-        <form method="POST" action="{{ route('teachers.store') }}" class="bg-white p-4 rounded-2xl">
-
-            @csrf
+@props([
+    'resource'=>'',
+    'table'=>''
+])
+<x-crud.create :resource="$resource" :table="$table">
 
             <!-- Name -->
             <div>
@@ -58,17 +56,14 @@
                 @enderror
             </div>
 
-            <div class="flex justify-end mt-6 gap-10">
-                <x-primary-button>
-                    {{ __('Create Teacher') }}
-                </x-primary-button>
-                <x-boton>
-                    {{ __('Cancel') }}
-                </x-boton>
-            </div>
+{{--            <div class="flex justify-end mt-6 gap-10">--}}
+{{--                <x-primary-button>--}}
+{{--                    {{ __('Create Teacher') }}--}}
+{{--                </x-primary-button>--}}
+{{--                <x-boton>--}}
+{{--                    {{ __('Cancel') }}--}}
+{{--                </x-boton>--}}
+{{--            </div>--}}
 
-        </form>
 
-    </div>
-
-</x-layouts.layout>
+</x-crud.create>

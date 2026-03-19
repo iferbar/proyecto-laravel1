@@ -13,34 +13,44 @@ class CrudController extends Controller
      */
     public function index(string $resource)
     {
-        $rol = config("resources.$resource.role");
 
-        if ($rol){
-            $resource_name = $rol?  config("resources.$resource.resource"):$resource;
+        //Recuperar todos los datos de resources del config
+        $config =config("resources.$resource");
 
-            $model = "App\\Models\\".Str::studly(Str::singular($resource_name));
+        $resource_name =$config['resource']??$resource;
+        //Resolvemos de forma dinámica el modelo
+        $model = "App\\Models\\".Str::studly(Str::singular($resource_name));
 
-            $rows = $model::role($rol)->paginate(5);
+        //obtener una paginacion de 5 registros del model, teniendo en cuenta que si es rol
+        //TODO Tener en cuanta los roles.
+        $query = $model::query();
+        $rol = $config['role'] ??null;
 
-        }else{
-            $model = "App\\Models\\".Str::studly(Str::singular($resource));
-            $rows =$model::paginate(5);
-        }
+        if ($rol)
+            $query = $query->role($rol);
+
+
+        $rows=$query->paginate(5);
+
 
         $fields = $model::getFields();
 
+
         $table = __("$resource.table");
+
         return view('crud.index', compact('resource', 'rows', 'fields', 'table'));
 
-        //TODO Tener en cuanta los roles.
-
-        return"<h1> Voy a gestionar $resource</h1>";
-        //
     }
-
     /**
      * Store a newly created resource in storage.
      */
+    public function create(string $resource)
+    {
+        $table= __("$resource.table");
+        return view("$resource.create", compact('resource', 'table'));
+        //
+    }
+
     public function store(string $resource,Request $request)
     {
         //
